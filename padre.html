@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padre</title>
+    <style>
+        body {
+            margin: 0 auto;
+        }
+        .content {
+            background-color: #9ecae1;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Yo soy el padre y aquí debajo tengo un iframe</h1>
+        <p>El iframe hijo tiene marcada una altura de 200px pero PymJS ajusta la altura en función del alto real del contenido del hijo</p>
+        <div id="prueba">
+            <iframe src="./hijo/hijo.html" width="100%" height="200px"></iframe>
+        </div>
+        <h1>Yo soy el padre y aquí encima tengo un iframe</h1>
+    </div>
+    
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    <script>
+        let pymParent = new pym.Parent('prueba', './hijo/hijo.html', {});
+    </script>
+</body>
+</html>
